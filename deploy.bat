@@ -52,7 +52,12 @@ git commit -m "%MSG%" || goto :erro
 :sync
 rem --- 4. Envio ---
 echo [4/4] Enviando para o GitHub...
-git pull --rebase origin %BRANCH%
+git pull --rebase -X theirs origin %BRANCH%
+if errorlevel 1 (
+  echo [AVISO] Conflito ao sincronizar. Cancelando a sincronizacao para nao bagunhar os arquivos...
+  git rebase --abort
+  goto :erro
+)
 git push -u origin %BRANCH% || goto :erro
 
 echo.
