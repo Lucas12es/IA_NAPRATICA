@@ -7,28 +7,37 @@
   function safeGet(k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } }
   function safeSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) { /* ignora */ } }
 
-  /* ---------- Checkout / preço ---------- */
+  /* ---------- Checkout / preço (config.js é a fonte única; o HTML já traz os mesmos valores) ---------- */
+  var buys = document.querySelectorAll("[data-buy]");
   var buy = document.getElementById("buy");
-  if (buy) {
+  Array.prototype.forEach.call(buys, function (a) {
     if (cfg.checkoutUrl) {
-      buy.setAttribute("href", cfg.checkoutUrl);
-      buy.setAttribute("rel", "noopener");
-      buy.setAttribute("target", "_blank");
-      buy.removeAttribute("aria-disabled");
+      a.setAttribute("href", cfg.checkoutUrl);
+      a.setAttribute("rel", "noopener");
+      a.setAttribute("target", "_blank");
     } else {
-      buy.setAttribute("aria-disabled", "true");
-      buy.setAttribute("role", "link");
-      buy.firstChild.textContent = "Link de compra em breve ";
-      buy.addEventListener("click", function (e) { e.preventDefault(); });
+      a.setAttribute("href", "#oferta"); a.removeAttribute("target");
     }
+  });
+  if (!cfg.checkoutUrl && buy) {
+    buy.setAttribute("aria-disabled", "true");
+    buy.setAttribute("role", "link");
+    buy.firstChild.textContent = "Link de compra em breve ";
+    buy.addEventListener("click", function (e) { e.preventDefault(); });
+  }
+  function fill(sel, val) {
+    Array.prototype.forEach.call(document.querySelectorAll(sel), function (el) {
+      if (val) { el.textContent = val; el.hidden = false; } else { el.hidden = true; }
+    });
   }
   if (cfg.price) {
-    var p = document.getElementById("price");
-    document.getElementById("price-value").textContent = cfg.price;
-    if (cfg.priceOld) { document.getElementById("price-old").textContent = cfg.priceOld; document.getElementById("price-old-wrap").hidden = false; }
-    if (cfg.discount) { var off = document.getElementById("price-off"); off.textContent = cfg.discount; off.hidden = false; }
-    if (cfg.priceLabel) document.getElementById("price-label").textContent = cfg.priceLabel;
-    if (p) p.classList.add("on");
+    fill("[data-price]", cfg.price);
+    fill("[data-price-old]", cfg.priceOld);
+    fill("[data-discount]", cfg.discount);
+    fill("[data-price-num]", String(cfg.price).replace(/^R\$\s*/, ""));
+    var lbl = document.getElementById("price-label"); if (lbl && cfg.priceLabel) lbl.textContent = cfg.priceLabel;
+  } else {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-price-wrap]"), function (el) { el.hidden = true; });
   }
 
   /* ---------- Marquee: duplica para loop contínuo ---------- */
@@ -129,12 +138,14 @@
   }
 
   /* Evento de início de compra ao clicar no botão do checkout */
-  if (buy && cfg.checkoutUrl) {
-    buy.addEventListener("click", function () {
-      if (window.fbq) {
-        window.fbq("track", "InitiateCheckout", { value: cfg.priceValue || 0, currency: "BRL", content_name: "IA na Prática" });
-      }
-      if (window.gtag) window.gtag("event", "begin_checkout", { currency: "BRL", value: cfg.priceValue || 0 });
+  if (cfg.checkoutUrl) {
+    Array.prototype.forEach.call(buys, function (a) {
+      a.addEventListener("click", function () {
+        if (window.fbq) {
+          window.fbq("track", "InitiateCheckout", { value: cfg.priceValue || 0, currency: "BRL", content_name: "IA na Prática" });
+        }
+        if (window.gtag) window.gtag("event", "begin_checkout", { currency: "BRL", value: cfg.priceValue || 0 });
+      });
     });
   }
 
