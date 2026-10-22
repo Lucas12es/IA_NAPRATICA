@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IA na Prática: ebook do primeiro prompt às automações com IA</title>
+  <meta name="description" content="Guia completo de IA com 77 páginas, 14 capítulos, +45 ferramentas, prompts prontos, automações e plano de 30 dias. Por Lucas Taborda.">
+  <meta name="author" content="Lucas Taborda">
+  <meta name="theme-color" content="#0a0e22">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://ia-napratica.ltabordaferrei.workers.dev/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="IA na Prática">
+  <meta property="og:title" content="IA na Prática: do primeiro prompt às automações que trabalham por você">
+  <meta property="og:description" content="Guia completo de IA: 14 capítulos, +45 ferramentas, prompts prontos, automações e um plano de 30 dias. Por Lucas Taborda.">
+  <meta property="og:url" content="https://ia-napratica.ltabordaferrei.workers.dev/">
+  <meta property="og:image" content="https://ia-napratica.ltabordaferrei.workers.dev/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Capa do ebook IA na Prática, de Lucas Taborda">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IA na Prática: do primeiro prompt às automações que trabalham por você">
+  <meta name="twitter:description" content="Guia completo de IA: 14 capítulos, +45 ferramentas, prompts prontos, automações e plano de 30 dias.">
+  <meta name="twitter:image" content="https://ia-napratica.ltabordaferrei.workers.dev/assets/img/og.jpg">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preload" href="assets/fonts/inter-display-800.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" as="image" type="image/webp" href="assets/img/hero-book-768.webp"
+        imagesrcset="assets/img/hero-book-480.webp 480w, assets/img/hero-book-768.webp 768w, assets/img/hero-book-1080.webp 1080w"
+        imagesizes="(min-width: 900px) 520px, 92vw" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.className += ' js';</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Book",
+        "@id": "https://ia-napratica.ltabordaferrei.workers.dev/#livro",
+        "name": "IA na Prática: Do Primeiro Prompt às Automações que Trabalham por Você",
+        "author": { "@type": "Person", "name": "Lucas Taborda" },
+        "inLanguage": "pt-BR",
+        "numberOfPages": 77,
+        "bookFormat": "https://schema.org/EBook",
+        "datePublished": "2026",
+        "image": "https://ia-napratica.ltabordaferrei.workers.dev/assets/img/og.jpg",
+        "description": "Guia completo de inteligência artificial em 14 capítulos: assistentes, prompts, imagens, vídeo, Claude, MCP, automações, criação de sites sem programar e plano de 30 dias.",
+        "offers": { "@type": "Offer", "price": "37.90", "priceCurrency": "BRL", "availability": "https://schema.org/InStock", "url": "https://pay.cakto.com.br/87ne77g_1231084" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Preciso saber programar para aproveitar o ebook?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O ebook foi escrito em camadas: a Trilha Iniciante começa do zero, sem jargão, e até o capítulo sobre criar sites e aplicativos mostra como fazer isso sem programar." } },
+          { "@type": "Question", "name": "O ebook serve para quem está começando do zero?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A Parte 1 explica como a IA funciona, apresenta os principais assistentes e ensina a escrever bons prompts. Quem já usa IA pode seguir a Trilha Avançada e ir direto para conexões, MCP e automações." } },
+          { "@type": "Question", "name": "Em qual formato recebo o ebook?", "acceptedAnswer": { "@type": "Answer", "text": "O ebook é um arquivo PDF, que você lê no celular, tablet ou computador. A liberação do acesso é feita pela plataforma de pagamento após a compra." } },
+          { "@type": "Question", "name": "As ferramentas e os preços vão ficar desatualizados?", "acceptedAnswer": { "@type": "Answer", "text": "O mundo da IA muda toda semana, por isso o ebook foca no que não muda: princípios, categorias de ferramentas e a forma de pensar. Quando um nome específico for substituído, você saberá exatamente o que procurar. Preços citados são referência e devem ser conferidos no site oficial de cada ferramenta." } },
+          { "@type": "Question", "name": "Existe garantia ou direito de arrependimento?", "acceptedAnswer": { "@type": "Answer", "text": "Compras feitas pela internet no Brasil contam com o direito de arrependimento de 7 dias previsto no Código de Defesa do Consumidor (art. 49). Confira as condições na página de pagamento." } },
+          { "@type": "Question", "name": "O ebook ensina a usar IA com segurança?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O capítulo 14 trata de privacidade, o que nunca colar em uma IA, golpes com IA, direitos autorais e como checar informações." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#conteudo-principal">Pular para o conteúdo</a>
+
+  <!-- Sprite de ícones (estilo Lucide) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-wand" viewBox="0 0 24 24"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"/><path d="m14 7 3 3"/><path d="M5 6v4"/><path d="M19 14v4"/><path d="M10 2v2"/><path d="M7 8H3"/><path d="M21 16h-4"/><path d="M11 3H9"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></symbol>
+    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
+  </svg>
+
+  <div class="topbar">Edição 2026 · Guia completo em PDF · <b>77 páginas</b> de IA aplicada</div>
+
+
+  <main id="conteudo-principal">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="topo" aria-labelledby="h1">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="pill"><i aria-hidden="true"></i> Guia completo · Edição 2026</span>
+          <h1 id="h1">Você usa a IA como se fosse o Google. <span class="grad-text">Hora de fazê-la trabalhar por você.</span></h1>
+          <p class="sub"><strong>IA na Prática</strong> leva você do primeiro prompt às automações que rodam sozinhas: assistentes, imagens, vídeo, Claude, MCP, sites sem programar e um plano de 30 dias para dominar tudo.</p>
+
+          <p class="hero-offer" data-price-wrap><s data-price-old>R$ 47,38</s> <strong data-price>R$ 37,90</strong> <span class="off" data-discount>20% de desconto</span> <span class="fmt">Ebook em PDF · 77 páginas</span></p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-cta btn-lg" href="https://pay.cakto.com.br/87ne77g_1231084" target="_blank" rel="noopener" data-buy><span>Comprar por R$ <span data-price-num>37,90</span></span> <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost btn-lg" href="#conteudo">Ver o que tem dentro</a>
+          </div>
+
+
+          <ul class="hero-points">
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg> 14 capítulos</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg> Prompts prontos para copiar</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg> Automações e MCP</li>
+          </ul>
+          <p class="hero-note">Ebook digital em PDF · por Lucas Taborda · pagamento na página da Cakto</p>
+        </div>
+
+        <div class="hero-art">
+          <span class="sticker s1">77 páginas</span>
+          <span class="sticker s2">+45 ferramentas</span>
+          <span class="sticker s3">Plano de 30 dias</span>
+          <img src="assets/img/hero-book-768.webp"
+               srcset="assets/img/hero-book-480.webp 480w, assets/img/hero-book-768.webp 768w, assets/img/hero-book-1080.webp 1080w"
+               sizes="(min-width: 900px) 520px, 92vw"
+               width="1080" height="900" fetchpriority="high"
+               alt="Capa do ebook IA na Prática: Do Primeiro Prompt às Automações que Trabalham por Você, de Lucas Taborda">
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NÚMEROS ============ -->
+    <section class="stats" aria-label="O ebook em números">
+      <div class="container">
+        <div class="stats-card">
+          <div class="stat"><b>77</b><span>páginas</span></div>
+          <div class="stat"><b>14</b><span>capítulos</span></div>
+          <div class="stat"><b>+45</b><span>ferramentas</span></div>
+          <div class="stat"><b>10</b><span>prompts prontos</span></div>
+          <div class="stat"><b>30</b><span>dias de plano</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FERRAMENTAS ============ -->
+    <section class="marquee" aria-label="Ferramentas abordadas no ebook">
+      <p>Ferramentas que você vai aprender a usar</p>
+      <div class="marquee-wrap">
+        <div class="marquee-track" id="marquee">
+          <span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>Microsoft Copilot</span><span>Perplexity</span><span>Grok</span><span>DeepSeek</span><span>Mistral Le Chat</span><span>NotebookLM</span><span>DeepL</span><span>Midjourney</span><span>Ideogram</span><span>Leonardo.ai</span><span>Flux</span><span>Canva</span><span>Adobe Firefly</span><span>Veo</span><span>Sora</span><span>Runway</span><span>Kling</span><span>HeyGen</span><span>Synthesia</span><span>ElevenLabs</span><span>Suno</span><span>CapCut</span><span>Gamma</span><span>Zapier</span><span>Make</span><span>n8n</span><span>Lovable</span><span>Bolt</span><span>v0</span><span>Replit</span><span>Cursor</span><span>Claude Code</span><span>GitHub</span><span>Hugging Face</span><span>Ollama</span><span>LM Studio</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEMA ============ -->
+    <section class="section problem" id="problema" aria-labelledby="h-problema">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">O problema</span>
+          <h2 class="h2" id="h-problema">A maioria faz uma pergunta curta, lê a resposta e fecha a aba.</h2>
+          <p class="lead">Fica de fora quase todo o potencial da IA. E o que separa quem tira resultado de quem só experimenta não é sorte: é saber pedir, escolher e conectar.</p>
+        </div>
+
+        <div class="cards-3">
+          <article class="p-card reveal" data-c="violet">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-msg"/></svg></span>
+            <h3>Respostas genéricas</h3>
+            <p>Pedido vago, resposta que serviria para qualquer pessoa. Quase sempre o problema está no pedido, não na ferramenta.</p>
+          </article>
+          <article class="p-card reveal" data-c="pink" style="--d:.08s">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-search"/></svg></span>
+            <h3>Ferramentas demais</h3>
+            <p>Surge uma IA nova toda semana. Sem saber qual usar para cada tarefa, você perde tempo testando em vez de produzir.</p>
+          </article>
+          <article class="p-card reveal" data-c="amber" style="--d:.16s">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-zap"/></svg></span>
+            <h3>Tarefas repetitivas</h3>
+            <p>E-mails, planilhas, resumos, posts, propostas. Tudo no manual, enquanto a IA poderia fazer por você, até enquanto você dorme.</p>
+          </article>
+        </div>
+
+        <div class="bridge reveal">
+          <p>Quem aprende IA de verdade agora passa a competir com quem ainda não sabe usá-la.</p>
+          <small>Uma vantagem enorme no mercado de trabalho, nos negócios e na criação de conteúdo. É exatamente isso que o ebook entrega, passo a passo.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BENEFÍCIOS ============ -->
+    <section class="section benefits" id="beneficios" aria-labelledby="h-benef">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">O que você vai conquistar</span>
+          <h2 class="h2" id="h-benef">Ao terminar a leitura, você vai saber:</h2>
+        </div>
+
+        <div class="bento">
+          <article class="b-card reveal wide" data-c="violet">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-book"/></svg></span>
+            <h3><em>Entender</em> como a IA funciona</h3>
+            <p>Sem jargão, para saber quando confiar nela e quando desconfiar, incluindo alucinações e limites.</p>
+          </article>
+          <article class="b-card reveal" data-c="cyan" style="--d:.05s">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-target"/></svg></span>
+            <h3><em>Escolher</em> a IA certa</h3>
+            <p>ChatGPT, Claude, Gemini e outros: qual usar em cada tarefa.</p>
+          </article>
+          <article class="b-card reveal" data-c="teal" style="--d:.1s">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-clip"/></svg></span>
+            <h3><em>Escrever</em> prompts melhores</h3>
+            <p>Resultados profissionais, com biblioteca pronta para copiar.</p>
+          </article>
+          <article class="b-card reveal" data-c="pink">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-image"/></svg></span>
+            <h3><em>Criar</em> imagens, vídeos e vozes</h3>
+            <p>Imagens, vídeos, vozes, músicas e apresentações com as melhores ferramentas.</p>
+          </article>
+          <article class="b-card reveal wide" data-c="amber" style="--d:.05s">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-plug"/></svg></span>
+            <h3><em>Conectar</em> a IA ao seu dia a dia</h3>
+            <p>Conectores e MCP para ligar a IA às suas ferramentas e multiplicar o que ela consegue fazer.</p>
+          </article>
+          <article class="b-card reveal" data-c="cyan">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-globe"/></svg></span>
+            <h3><em>Construir</em> sites e apps</h3>
+            <p>Sem saber programar.</p>
+          </article>
+          <article class="b-card reveal wide" data-c="violet" style="--d:.1s">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-zap"/></svg></span>
+            <h3><em>Automatizar</em> o que é repetitivo</h3>
+            <p>Para que as tarefas trabalhem por você 24 horas por dia.</p>
+          </article>
+          <article class="b-card reveal wide" data-c="teal" style="--d:.05s">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-lock"/></svg></span>
+            <h3><em>Usar</em> com segurança</h3>
+            <p>Protegendo seus dados e sua reputação.</p>
+          </article>
+        </div>
+
+        <p style="text-align:center;margin-top:36px"><a class="btn btn-cta" href="https://pay.cakto.com.br/87ne77g_1231084" target="_blank" rel="noopener" data-buy>Quero aprender tudo isso <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+      </div>
+    </section>
+
+    <!-- ============ CONTEÚDO ============ -->
+    <section class="section" id="conteudo" aria-labelledby="h-cont">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Por dentro do ebook</span>
+          <h2 class="h2" id="h-cont">4 partes, 14 capítulos e um caminho claro.</h2>
+          <p class="lead">Cada parte se apoia na anterior, mas você pode pular direto para o que faz mais sentido. Os números ao lado de cada capítulo indicam a página inicial.</p>
+        </div>
+
+        <div class="parts">
+          <article class="part reveal" data-c="violet">
+            <header class="part-head"><span class="part-tag">Parte 1</span><h3>Fundamentos</h3></header>
+            <div class="chapters">
+              <div class="chapter"><span class="n">01</span><h4>O que é, de verdade, a Inteligência Artificial</h4><span class="pg">p. 6</span><p>IA, Machine Learning e IA Generativa, como o modelo "pensa" e onde ela erra.</p></div>
+              <div class="chapter"><span class="n">02</span><h4>Os grandes assistentes de IA</h4><span class="pg">p. 11</span><p>ChatGPT, Claude, Gemini, Copilot e Perplexity, com tabela comparativa e quando vale assinar.</p></div>
+              <div class="chapter"><span class="n">03</span><h4>A arte do prompt</h4><span class="pg">p. 16</span><p>Os 5 elementos de um bom prompt, 10 técnicas e uma biblioteca de prompts prontos.</p></div>
+            </div>
+          </article>
+
+          <article class="part reveal" data-c="teal" style="--d:.06s">
+            <header class="part-head"><span class="part-tag">Parte 2</span><h3>As ferramentas</h3></header>
+            <div class="chapters">
+              <div class="chapter"><span class="n">04</span><h4>IA para texto, estudo e pesquisa</h4><span class="pg">p. 23</span><p>Pesquisa com fontes, NotebookLM, escrita, revisão, resumo e tradução.</p></div>
+              <div class="chapter"><span class="n">05</span><h4>IA para imagens e design</h4><span class="pg">p. 27</span><p>Principais geradores de imagem e como escrever prompts visuais.</p></div>
+              <div class="chapter"><span class="n">06</span><h4>IA para vídeo, voz e música</h4><span class="pg">p. 31</span><p>Geração de vídeo, avatares, voz e dublagem, música e cortes automáticos.</p></div>
+              <div class="chapter"><span class="n">07</span><h4>IA para produtividade e negócios</h4><span class="pg">p. 35</span><p>Apresentações em minutos, reuniões resumidas, atendimento, vendas e marketing.</p></div>
+            </div>
+          </article>
+
+          <article class="part reveal" data-c="pink">
+            <header class="part-head"><span class="part-tag">Parte 3</span><h3>Poder avançado</h3></header>
+            <div class="chapters">
+              <div class="chapter"><span class="n">08</span><h4>Claude a fundo: o assistente que se conecta a tudo</h4><span class="pg">p. 40</span><p>Projetos, Artifacts, Skills, conectores e Claude Code.</p></div>
+              <div class="chapter"><span class="n">09</span><h4>MCP: o "USB" da Inteligência Artificial</h4><span class="pg">p. 45</span><p>Como funciona, exemplos práticos e como instalar com segurança.</p></div>
+              <div class="chapter"><span class="n">10</span><h4>Repositórios e o mundo open source</h4><span class="pg">p. 50</span><p>GitHub, Hugging Face e como rodar IA no seu próprio computador.</p></div>
+              <div class="chapter"><span class="n">11</span><h4>Automações: a IA trabalhando enquanto você dorme</h4><span class="pg">p. 54</span><p>Gatilhos e ações, 5 automações prontas para montar e agentes de IA.</p></div>
+              <div class="chapter"><span class="n">12</span><h4>Criando sites e apps sem programar</h4><span class="pg">p. 59</span><p>Plataformas de "vibe coding" e do zero ao site publicado, passo a passo.</p></div>
+            </div>
+          </article>
+
+          <div class="stack">
+          <article class="part reveal" data-c="amber" style="--d:.06s">
+            <header class="part-head"><span class="part-tag">Parte 4</span><h3>Na prática</h3></header>
+            <div class="chapters">
+              <div class="chapter"><span class="n">13</span><h4>Casos de uso e fluxos completos</h4><span class="pg">p. 63</span><p>Kits de IA para criador de conteúdo, empreendedor, profissional e estudante.</p></div>
+              <div class="chapter"><span class="n">14</span><h4>Uso responsável, segurança e o futuro</h4><span class="pg">p. 67</span><p>Privacidade, golpes com IA, direitos autorais e como checar informações.</p></div>
+            </div>
+          </article>
+
+        <aside class="bonus reveal" aria-labelledby="h-bonus">
+          <h3 id="h-bonus">Encerramento e bônus incluídos</h3>
+          <ul>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg><div>Seu plano de 30 dias para dominar a IA <span>Quatro semanas de tarefas práticas, p. 71</span></div></li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg><div>Glossário de IA de A a Z <span>Os termos explicados sem complicação, p. 73</span></div></li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg><div>Ferramentas citadas no ebook <span>Lista organizada por categoria com o site oficial de cada uma, p. 75</span></div></li>
+          </ul>
+        </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ POR DENTRO (páginas reais) ============ -->
+    <section class="section inside" id="por-dentro" aria-labelledby="h-inside">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Espie o material</span>
+          <h2 class="h2" id="h-inside">Páginas reais do ebook, sem enrolação.</h2>
+          <p class="lead">Design limpo, caixas de dica, desafios práticos e prompts prontos. Deslize para ver algumas páginas.</p>
+        </div>
+        <div class="rail-wrap">
+          <div class="rail" id="rail" tabindex="0" role="region" aria-label="Páginas de exemplo do ebook">
+            <figure class="shot">
+              <img src="assets/img/pg-sumario-480.webp" srcset="assets/img/pg-sumario-480.webp 480w, assets/img/pg-sumario-768.webp 768w" sizes="340px" width="768" height="1087" loading="lazy" alt="Página do sumário do ebook com as 4 partes e 14 capítulos">
+              <figcaption><b>Sumário</b>Tudo organizado em 4 partes.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/img/pg-como-usar-480.webp" srcset="assets/img/pg-como-usar-480.webp 480w, assets/img/pg-como-usar-768.webp 768w" sizes="340px" width="768" height="1087" loading="lazy" alt="Página Como usar este ebook, com as trilhas Iniciante e Avançada e as caixas de dica, atenção, prompt pronto e desafio prático">
+              <figcaption><b>Trilha Iniciante e Avançada</b>Escolha o caminho certo para o seu nível.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/img/pg-conceitos-480.webp" srcset="assets/img/pg-conceitos-480.webp 480w, assets/img/pg-conceitos-768.webp 768w" sizes="340px" width="768" height="1087" loading="lazy" alt="Página que explica IA, Machine Learning e IA Generativa com um diagrama de círculos">
+              <figcaption><b>Explicação visual</b>IA, Machine Learning e IA Generativa.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/img/pg-anatomia-prompt-480.webp" srcset="assets/img/pg-anatomia-prompt-480.webp 480w, assets/img/pg-anatomia-prompt-768.webp 768w" sizes="340px" width="768" height="1087" loading="lazy" alt="Página A anatomia de um bom prompt, com os 5 elementos: papel, contexto, tarefa, formato e exemplos">
+              <figcaption><b>Anatomia de um bom prompt</b>Os 5 elementos que mudam o resultado.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/img/pg-biblioteca-prompts-480.webp" srcset="assets/img/pg-biblioteca-prompts-480.webp 480w, assets/img/pg-biblioteca-prompts-768.webp 768w" sizes="340px" width="768" height="1087" loading="lazy" alt="Página com técnicas de prompt, erros comuns de iniciante e o início da biblioteca de prompts prontos">
+              <figcaption><b>Biblioteca de prompts</b>Copie, troque os colchetes e use.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/img/pg-plano-30-dias-480.webp" srcset="assets/img/pg-plano-30-dias-480.webp 480w, assets/img/pg-plano-30-dias-768.webp 768w" sizes="340px" width="768" height="1087" loading="lazy" alt="Página do plano de 30 dias com checklists da semana 1 à semana 4">
+              <figcaption><b>Plano de 30 dias</b>Checklists semana a semana.</figcaption>
+            </figure>
+          </div>
+          <div class="rail-ctl">
+            <button type="button" class="prev" aria-label="Páginas anteriores"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
+            <button type="button" class="next" aria-label="Próximas páginas"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROMPTS REAIS ============ -->
+    <section class="section prompts" id="prompts" aria-labelledby="h-prompts">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Teste agora</span>
+          <h2 class="h2" id="h-prompts">3 prompts do ebook para você copiar e usar hoje.</h2>
+          <p class="lead">Um gostinho da biblioteca do Capítulo 3. Troque o que está entre colchetes e cole no assistente de IA que você usa.</p>
+        </div>
+
+        <div class="prompt-grid">
+          <article class="prompt reveal" data-c="violet">
+            <span class="tag"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-clip"/></svg> Prompt pronto</span>
+            <h3>O prompt mestre</h3>
+            <blockquote id="p1">"Aja como [especialista]. Contexto: [situação detalhada]. Tarefa: [o que fazer]. Público: [para quem]. Formato: [como entregar]. Restrições: [o que evitar]. Antes de começar, faça as perguntas necessárias para entregar um resultado excelente."</blockquote>
+            <button type="button" class="copy" data-copy="p1"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-copy"/></svg><span>Copiar prompt</span></button>
+          </article>
+          <article class="prompt reveal" data-c="teal" style="--d:.08s">
+            <span class="tag"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-clip"/></svg> Prompt pronto</span>
+            <h3>Aprender qualquer assunto</h3>
+            <blockquote id="p2">"Quero aprender [assunto] do zero. Crie um plano de estudos de [X] semanas, com 30 minutos por dia. Para cada semana: objetivo, conceitos-chave, um exercício prático e um recurso gratuito para aprofundar."</blockquote>
+            <button type="button" class="copy" data-copy="p2"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-copy"/></svg><span>Copiar prompt</span></button>
+          </article>
+          <article class="prompt reveal" data-c="pink" style="--d:.16s">
+            <span class="tag"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-clip"/></svg> Prompt pronto</span>
+            <h3>Escrever um e-mail difícil</h3>
+            <blockquote id="p3">"Preciso escrever um e-mail para [pessoa/cargo] sobre [situação]. Meu objetivo é [objetivo], mantendo um bom relacionamento. Tom: [firme e educado/amigável]. Escreva 2 versões: uma mais direta e outra mais diplomática."</blockquote>
+            <button type="button" class="copy" data-copy="p3"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-copy"/></svg><span>Copiar prompt</span></button>
+          </article>
+        </div>
+        <p class="prompts-foot reveal">Esses são 3 dos 10 prompts da biblioteca. O ebook também ensina <strong>por que</strong> eles funcionam, para você criar os seus.</p>
+      </div>
+    </section>
+
+    <!-- ============ PARA QUEM ============ -->
+    <section class="section who" id="para-quem" aria-labelledby="h-who">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Para quem é</span>
+          <h2 class="h2" id="h-who">Do zero ao avançado, no seu ritmo.</h2>
+          <p class="lead">O material foi pensado em camadas. Você escolhe a trilha e pula para onde fizer mais sentido.</p>
+        </div>
+
+        <div class="tracks">
+          <article class="track reveal" data-c="teal">
+            <span class="badge">Trilha Iniciante</span>
+            <h3>Estou começando do zero</h3>
+            <p>Leia a Parte 1 com calma, faça os desafios práticos e depois escolha os capítulos da Parte 2 que combinam com seus objetivos.</p>
+          </article>
+          <article class="track reveal" data-c="violet" style="--d:.08s">
+            <span class="badge">Trilha Avançada</span>
+            <h3>Já uso IA no dia a dia</h3>
+            <p>Passe rápido pelo Capítulo 3 (sempre há algo novo em prompts) e vá direto à Parte 3, onde estão as conexões, os agentes e as automações.</p>
+          </article>
+        </div>
+
+        <div class="profiles">
+          <article class="profile reveal" data-c="pink">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-wand"/></svg></span>
+            <div><h3>Criadores de conteúdo</h3><p>Fluxo da ideia à publicação: uma gravação vira uma semana inteira de conteúdo.</p></div>
+          </article>
+          <article class="profile reveal" data-c="amber" style="--d:.06s">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-target"/></svg></span>
+            <div><h3>Empreendedores</h3><p>Fazer muito com pouca equipe: atendimento, propostas, marketing e gestão com IA.</p></div>
+          </article>
+          <article class="profile reveal" data-c="cyan" style="--d:.12s">
+            <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-book"/></svg></span>
+            <div><h3>Profissionais e estudantes</h3><p>Aprender mais rápido, produzir melhor e se destacar no trabalho e na carreira.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLANO 30 DIAS ============ -->
+    <section class="section plan" id="plano" aria-labelledby="h-plan">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Bônus dentro do ebook</span>
+          <h2 class="h2" id="h-plan">Seu plano de 30 dias para dominar a IA.</h2>
+          <p class="lead">Cerca de 20 a 30 minutos por dia. Em quatro semanas você sai da leitura para a prática.</p>
+        </div>
+
+        <div class="weeks">
+          <article class="week reveal" data-c="violet">
+            <span class="wk"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-cal"/></svg> Semana 1</span>
+            <h3>Fundamentos</h3>
+            <ul>
+              <li>Criar conta em pelo menos 2 assistentes</li>
+              <li>Configurar as instruções personalizadas</li>
+              <li>Usar a IA em uma tarefa real por dia</li>
+              <li>Praticar os 5 elementos do prompt</li>
+            </ul>
+          </article>
+          <article class="week reveal" data-c="teal" style="--d:.06s">
+            <span class="wk"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-cal"/></svg> Semana 2</span>
+            <h3>Ferramentas criativas</h3>
+            <ul>
+              <li>Testar o NotebookLM com um documento seu</li>
+              <li>Criar 5 imagens com prompt visual</li>
+              <li>Animar uma imagem em vídeo</li>
+              <li>Criar uma apresentação no Gamma</li>
+            </ul>
+          </article>
+          <article class="week reveal" data-c="pink" style="--d:.12s">
+            <span class="wk"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-cal"/></svg> Semana 3</span>
+            <h3>Conexões e contexto</h3>
+            <ul>
+              <li>Criar um Projeto sobre você ou seu negócio</li>
+              <li>Ativar um conector (Drive, Agenda ou Gmail)</li>
+              <li>Criar um Artifact útil</li>
+              <li>Explorar uma lista "awesome" no GitHub</li>
+            </ul>
+          </article>
+          <article class="week reveal" data-c="amber" style="--d:.18s">
+            <span class="wk"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-cal"/></svg> Semana 4</span>
+            <h3>Automação e construção</h3>
+            <ul>
+              <li>Montar sua primeira automação</li>
+              <li>Criar uma landing page ou link na bio com IA</li>
+              <li>Documentar seu "kit de IA"</li>
+              <li>Escolher um próximo projeto grande</li>
+            </ul>
+          </article>
+        </div>
+        <div class="challenge reveal"><b>Desafio final</b>Ao fim dos 30 dias, calcule quantas horas por semana a IA está economizando para você. Esse é o seu novo superpoder.</div>
+      </div>
+    </section>
+
+    <!-- ============ OFERTA ============ -->
+    <section class="section offer" id="oferta" aria-labelledby="h-oferta">
+      <div class="container offer-grid">
+        <div>
+          <span class="eyebrow" style="color:#b9a8ff">Sua oferta</span>
+          <h2 class="h2" id="h-oferta">Leve o IA na Prática e comece hoje.</h2>
+          <p class="lead" style="margin-top:16px">Um guia direto, em português, para quem quer parar de apenas testar a IA e começar a ter resultado com ela. Ferramentas vão mudar; quem sabe pensar com clareza e pedir bem domina qualquer IA que surgir.</p>
+          <div class="offer-art" style="margin-top:28px">
+            <img src="assets/img/hero-book-480.webp" srcset="assets/img/hero-book-480.webp 480w, assets/img/hero-book-768.webp 768w" sizes="(min-width: 900px) 420px, 90vw" width="480" height="400" loading="lazy" alt="Capa do ebook IA na Prática em 3D">
+          </div>
+        </div>
+
+        <div class="offer-card reveal">
+          <span class="ribbon">Ebook completo</span>
+          <h3>O que você recebe</h3>
+          <ul class="includes">
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg> Ebook IA na Prática em PDF (77 páginas, 14 capítulos)</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg> Biblioteca de 10 prompts prontos para copiar</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg> +45 ferramentas com o site oficial de cada uma</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg> 5 automações prontas para montar</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg> Plano de 30 dias com checklists semanais</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check"/></svg> Glossário de IA de A a Z</li>
+          </ul>
+
+          <div class="price on" id="price" data-price-wrap><small id="price-label">Investimento</small><span class="old">De <s data-price-old>R$ 47,38</s> por</span><div class="now"><span data-price>R$ 37,90</span><em data-discount>20% de desconto</em></div></div>
+
+          <a class="btn btn-cta btn-lg" id="buy" href="https://pay.cakto.com.br/87ne77g_1231084" target="_blank" rel="noopener" data-buy>Quero o IA na Prática <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+
+          <p class="secure"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-shield"/></svg><span>O pagamento é feito na página da Cakto. Compras online no Brasil contam com o direito de arrependimento de 7 dias (Código de Defesa do Consumidor, art. 49).</span></p>
+          <p class="peek"><a href="#por-dentro">Ver páginas reais do ebook antes de comprar</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section faq" id="faq" aria-labelledby="h-faq">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Dúvidas frequentes</span>
+          <h2 class="h2" id="h-faq">Ficou com alguma dúvida?</h2>
+        </div>
+        <div class="faq-list">
+          <details class="reveal"><summary>Preciso saber programar para aproveitar o ebook? <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></summary>
+            <p class="ans">Não. O ebook foi escrito em camadas: a Trilha Iniciante começa do zero, sem jargão. Até o capítulo sobre criar sites e aplicativos mostra como fazer isso sem programar.</p></details>
+          <details class="reveal"><summary>Serve para quem está começando do zero? <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></summary>
+            <p class="ans">Sim. A Parte 1 explica como a IA funciona, apresenta os principais assistentes e ensina a escrever bons prompts. Quem já usa IA pode seguir a Trilha Avançada e ir direto para conexões, MCP e automações.</p></details>
+          <details class="reveal"><summary>Em qual formato recebo o ebook? <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></summary>
+            <p class="ans">Em PDF, que você lê no celular, tablet ou computador. A liberação do acesso é feita pela plataforma de pagamento após a compra.</p></details>
+          <details class="reveal"><summary>As ferramentas e os preços vão ficar desatualizados? <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></summary>
+            <p class="ans">O mundo da IA muda toda semana, por isso o ebook foca no que não muda: os princípios, as categorias de ferramentas e a forma de pensar. Quando um nome específico for substituído, você saberá exatamente o que procurar. Valores citados são referência; confira o preço atual no site oficial da ferramenta.</p></details>
+          <details class="reveal"><summary>Existe garantia ou direito de arrependimento? <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></summary>
+            <p class="ans">Compras feitas pela internet no Brasil contam com o direito de arrependimento de 7 dias previsto no Código de Defesa do Consumidor (art. 49). Confira as condições na página de pagamento.</p></details>
+          <details class="reveal"><summary>O ebook ensina a usar IA com segurança? <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></summary>
+            <p class="ans">Sim. O Capítulo 14 trata de privacidade (o que nunca colar numa IA), golpes com IA, direitos autorais e como checar informações.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section class="final" aria-labelledby="h-final">
+      <div class="container">
+        <div class="final-card reveal">
+          <h2 id="h-final">Pare de só testar a IA. Coloque-a para trabalhar.</h2>
+          <p>Do primeiro prompt às automações, em um único guia prático, em português.</p>
+          <a class="btn btn-cta btn-lg" href="https://pay.cakto.com.br/87ne77g_1231084" target="_blank" rel="noopener" data-buy>Quero o IA na Prática <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="cols">
+        <div>
+          <a class="logo" href="#topo"><span class="logo-mark" aria-hidden="true">IA</span> IA na Prática</a>
+          <p style="margin-top:14px;max-width:38ch">Do primeiro prompt às automações que trabalham por você. Um ebook de Lucas Taborda.</p>
+        </div>
+        <nav aria-label="Navegação do rodapé">
+          <h4>Na página</h4>
+          <ul>
+            <li><a href="#conteudo">Conteúdo</a></li>
+            <li><a href="#prompts">Prompts de exemplo</a></li>
+            <li><a href="#plano">Plano de 30 dias</a></li>
+            <li><a href="#faq">Dúvidas</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Documentos legais">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="politica-de-privacidade/">Política de Privacidade</a></li>
+            <li><a href="termos-de-uso/">Termos de Uso</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="legal">© 2026 Lucas Taborda. Todos os direitos reservados. Os nomes de ferramentas e marcas citados (como ChatGPT, Claude, Gemini e outros) pertencem aos seus respectivos titulares e são mencionados apenas para fins informativos; este ebook não é afiliado, patrocinado ou endossado por eles.</p>
+    </div>
+  </footer>
+
+  <div class="sticky-cta" id="sticky" aria-hidden="true">
+    <div class="t">IA na Prática <small>R$ <span data-price-num>37,90</span> · Ebook em PDF</small></div>
+    <a class="btn btn-cta" href="https://pay.cakto.com.br/87ne77g_1231084" target="_blank" rel="noopener" data-buy tabindex="-1">Comprar agora</a>
+  </div>
+
+  <div class="cookie" id="cookie" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
+    <p>Usamos o Meta Pixel (cookies de medição e anúncios). <a href="politica-de-privacidade/">Saiba mais</a>.</p>
+    <div class="row"><button type="button" id="cookie-ok">Aceitar</button><button type="button" id="cookie-no" class="alt">Recusar</button></div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
