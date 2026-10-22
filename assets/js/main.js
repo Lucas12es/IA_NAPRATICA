@@ -99,10 +99,12 @@
     if (offer) new IntersectionObserver(function (e) { offerIn = e[0].isIntersecting; upd(); }, { threshold: 0.15 }).observe(offer);
   }
 
-  /* ---------- Analytics com consentimento (só se gaId estiver configurado) ---------- */
+  /* ---------- Analytics e Meta Pixel com consentimento (LGPD) ---------- */
   var cookie = document.getElementById("cookie");
+  var gaOk = !!cfg.gaId && /^G-[A-Z0-9]+$/.test(cfg.gaId);
+  var pxOk = !!cfg.metaPixelId && /^[0-9]{8,20}$/.test(String(cfg.metaPixelId));
+
   function loadGA(id) {
-    if (window.__gaLoaded) return; window.__gaLoaded = true;
     var s = document.createElement("script"); s.async = true;
     s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
     document.head.appendChild(s);
@@ -110,12 +112,38 @@
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag("js", new Date()); window.gtag("config", id, { anonymize_ip: true });
   }
-  if (cfg.gaId && /^G-[A-Z0-9]+$/.test(cfg.gaId)) {
+  function loadPixel(id) {
+    /* Snippet padrão do Meta Pixel */
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = [];
+      t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    window.fbq("init", id);
+    window.fbq("track", "PageView");
+  }
+  function loadTrackers() {
+    if (window.__trackersLoaded) return; window.__trackersLoaded = true;
+    if (gaOk) loadGA(cfg.gaId);
+    if (pxOk) loadPixel(String(cfg.metaPixelId));
+  }
+
+  /* Evento de início de compra ao clicar no botão do checkout */
+  if (buy && cfg.checkoutUrl) {
+    buy.addEventListener("click", function () {
+      if (window.fbq) {
+        window.fbq("track", "InitiateCheckout", { value: cfg.priceValue || 0, currency: "BRL", content_name: "IA na Prática" });
+      }
+      if (window.gtag) window.gtag("event", "begin_checkout", { currency: "BRL", value: cfg.priceValue || 0 });
+    });
+  }
+
+  if (gaOk || pxOk) {
     var consent = safeGet("ia-consent");
-    if (consent === "yes") loadGA(cfg.gaId);
+    if (consent === "yes") loadTrackers();
     else if (consent !== "no" && cookie) cookie.classList.add("show");
     var ok = document.getElementById("cookie-ok"), no = document.getElementById("cookie-no");
-    if (ok) ok.addEventListener("click", function () { safeSet("ia-consent", "yes"); cookie.classList.remove("show"); loadGA(cfg.gaId); });
+    if (ok) ok.addEventListener("click", function () { safeSet("ia-consent", "yes"); cookie.classList.remove("show"); loadTrackers(); });
     if (no) no.addEventListener("click", function () { safeSet("ia-consent", "no"); cookie.classList.remove("show"); });
   }
 })();

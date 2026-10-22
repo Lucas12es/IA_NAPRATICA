@@ -13,7 +13,11 @@ window.LDT_CONFIG = {
   price: "R$ 37,90",         // preço "por"
   discount: "20% de desconto", // selo ao lado do preço. Vazio = não exibe.
   priceLabel: "Investimento",
+  priceValue: 37.90,         // valor numérico enviado ao Pixel (evento InitiateCheckout)
 
   // ID do Google Analytics 4, ex.: "G-XXXXXXXXXX". Vazio = sem analytics e sem aviso de cookies.
-  gaId: ""
+  gaId: "",
+
+  // ID do Meta Pixel (Facebook/Instagram Ads). Só carrega depois do "Aceitar" no aviso de cookies.
+  metaPixelId: "1641621147670473"
 };

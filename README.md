@@ -46,9 +46,11 @@ Abra http://localhost:8000. Não há `npm install` nem `npm run build` neste pro
 
 ## Opcional
 
+- **Meta Pixel:** instalado (ID em `config.js` → `metaPixelId`). Carrega só após "Aceitar" no aviso de cookies; envia `PageView` e `InitiateCheckout` (clique no botão de compra). Para validar, use a extensão Meta Pixel Helper ou o Gerenciador de Eventos do Meta. Para vender via Cakto, configure também o pixel na própria Cakto para rastrear a compra concluída.
+
 - **Google Analytics 4:** `config.js` → `gaId: "G-XXXXXXXXXX"`. Ao preencher, aparece automaticamente um aviso de
   cookies e o GA só é carregado após o "Aceitar". Depois, associe a propriedade ao Google Search Console
-  (envie `https://seudominio/sitemap.xml`). Meta Pixel não foi incluído (não solicitado).
+  (envie `https://seudominio/sitemap.xml`). 
 - **Depoimentos reais:** nenhum foi inventado. Quando houver, crie uma seção de prova social antes da oferta.
 - **Fonte de marca (Sora):** o ebook usa Sora nos títulos. Neste ambiente ela não estava disponível, então os
   títulos usam Inter Display ExtraBold. Para trocar: adicione `assets/fonts/sora-800.woff2`, declare o `@font-face`
