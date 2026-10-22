@@ -126,6 +126,7 @@
     window.gtag("js", new Date()); window.gtag("config", id, { anonymize_ip: true });
   }
   function loadPixel(id) {
+    if (window.fbq) return; /* já carregado no <head> */
     /* Snippet padrão do Meta Pixel */
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
