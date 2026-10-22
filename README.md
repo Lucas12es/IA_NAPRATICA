@@ -54,6 +54,12 @@ Abra http://localhost:8000. Não há `npm install` nem `npm run build` neste pro
   títulos usam Inter Display ExtraBold. Para trocar: adicione `assets/fonts/sora-800.woff2`, declare o `@font-face`
   em `styles.css` e altere `--font-display`.
 
+## Deploy rápido (Windows)
+
+Dê dois cliques em `deploy.bat` (ou rode `deploy.bat "mensagem"`). Ele envia as alterações ao GitHub
+(`Lucas12es/IA_NAPRATICA`, branch `main`) e o Cloudflare Pages publica sozinho em 1–2 minutos.
+Requer o Git instalado.
+
 ## Deploy (Cloudflare Pages)
 
 1. Suba esta pasta para um repositório no GitHub (o `.gitignore` já está configurado).
