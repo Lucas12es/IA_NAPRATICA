@@ -8,7 +8,9 @@ if (!/^https:\/\/[^\s/]+\.[^\s/]+$/.test(target)) {
   console.error("Informe o domínio completo com https. Ex.: node scripts/set-domain.mjs https://www.seudominio.com.br");
   process.exit(1);
 }
-const PLACEHOLDER = "https://SEU-DOMINIO.com.br";
+// Detecta o domínio atual a partir do canonical do index.html (permite trocar mais de uma vez).
+const m = /<link rel="canonical" href="(https:\/\/[^\/"]+)/.exec(readFileSync("index.html", "utf8"));
+const PLACEHOLDER = m ? m[1] : "https://SEU-DOMINIO.com.br";
 const exts = new Set([".html", ".xml", ".txt"]);
 let changed = 0;
 (function walk(dir) {
