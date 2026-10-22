@@ -337,8 +337,8 @@ button { font: inherit; cursor: pointer; }
 .cookie button.alt { background: #fff; color: var(--violet-700); }
 
 /* ---------- Reveal (só com JS) ---------- */
-.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: var(--d, 0s); }
-.js .reveal.in { opacity: 1; transform: none; }
+.reveal-ready .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: var(--d, 0s); }
+.reveal-ready .reveal.in { opacity: 1; transform: none; }
 
 /* ---------- Páginas legais ---------- */
 .doc { max-width: 780px; margin-inline: auto; padding: 56px var(--gutter) 96px; }
@@ -409,6 +409,6 @@ button { font: inherit; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
-  .js .reveal { opacity: 1; transform: none; }
+  .reveal-ready .reveal { opacity: 1; transform: none; }
   .marquee-wrap { overflow-x: auto; }
 }
