@@ -466,3 +466,11 @@ button { font: inherit; cursor: pointer; }
 /* ---------- Versão enxuta: capítulos só com título ---------- */
 .chapter p { display: none; }
 .chapter { align-items: center; }
+
+/* ---------- Primeira dobra: preço em destaque ---------- */
+.hero-offer { align-items: center; gap: 4px 14px; margin-top: 20px; font-size: 1rem; }
+.hero-offer strong { font-size: clamp(2.4rem, 7vw, 3.2rem); line-height: 1; color: #ffd36b; }
+.hero-offer .off { font-size: .85rem; padding: 6px 12px; }
+.hero-ctas .btn-ghost { flex: 0 1 auto; min-height: 48px; padding-inline: 20px; font-size: .95rem; opacity: .9; }
+.hero-ctas .btn-cta { flex: 1 1 280px; }
+.final-card p strong { color: #fff; font-size: 1.4em; }
